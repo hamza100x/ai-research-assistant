@@ -20,7 +20,7 @@ def researcher_node(state: ResearchState):
     results = search_tool.invoke(state["query"])
     
     # Convert results to string
-    results_text = "\n".join([r["content"] for r in results])
+    results_text = str(results)
     
     return {"search_results": results_text}
 
