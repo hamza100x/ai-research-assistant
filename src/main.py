@@ -2,12 +2,23 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from graph import build_graph
 
 app = FastAPI(title="AI Research Assistant")
+
+
+app.mount("/static", StaticFiles(directory="src/static"), name="static")
+
+@app.get("/ui")
+
+def ui():
+    return FileResponse("src/static/index.html")
+
 
 # Allow frontend to talk to backend
 app.add_middleware(
