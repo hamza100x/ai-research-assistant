@@ -1,3 +1,12 @@
+---
+title: AI Research Assistant
+emoji: 🤖
+colorFrom: purple
+colorTo: blue
+sdk: docker
+pinned: false
+---
+
 # 🤖 AI Research Assistant
 
 A multi-agent AI system that autonomously researches any topic and generates a structured report.
