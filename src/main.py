@@ -50,3 +50,8 @@ def research(request: ResearchRequest):
         "final_report": ""
     })
     return ResearchResponse(report=result["final_report"])
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
